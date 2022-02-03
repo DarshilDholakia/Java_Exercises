@@ -9,12 +9,14 @@ public class Exercise6 {
             int counter = 0;
             int index = 0;
 
-            int[] intArray = new int[counter];
+
             for (int i = 0; i < args.length; i++) {
+                int[] intArray = new int[counter];
                 intArray[index] = Integer.parseInt(args[i]);
                 counter++;
             }
 
+            int[] intArray = new int[counter];
             for (int j = 0; j < intArray.length; j++) {
                 addResult += intArray[j];
             }
