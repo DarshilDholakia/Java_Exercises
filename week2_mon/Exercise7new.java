@@ -1,34 +1,39 @@
 package com.bnta.Exercises.week2_mon;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Exercise7new {
     public static void main(String[] args) {
-        System.out.println(analyser(args));
+        String[] inArray = {"a", "ab", "abc", "abc", "ab"};
+        System.out.println(Arrays.toString(analyser(inArray)));
+
     }
 
-    static String analyser(String[] input) {
+    static String[] analyser(String[] input) {
 
-        ArrayList<String> longestString = new ArrayList<>();
+        int counter = 0; //counter is initialised to 0
+        int max = 0; //max is initialised to 0
 
-        for (int i = 1; i < input.length; i++) {
-            if (input[i].length() >= input[i-1].length()) {
-
-                ArrayList longestString = input[i];
-
+        for (int i = 0; i < input.length; i++) {
+            int wordSize = input[i].length();
+            if (max == wordSize) {
+                counter++;
+            } else if (max < wordSize) {
+                max = wordSize;
+                counter = 1;
             }
         }
 
-        return longestString;
+        String[] answer = new String[counter]; // "answer" which is an array of strings, set to be the size of "counter"
+        int index = 0; //index is initialised to 0
+
+        for (int i = 0; i < input.length; i++) {
+            int wordSize = input[i].length();   //set wordSize variable to length of each element in input array
+            if (max == wordSize) {              //if max is equals to wordSize...
+                answer[index] = input[i];       // this line basically sets the value at i in 'input' array in the position index within the answer array
+                index++;                        // then, index must be incremented so then, if there are multiple longest words, the next one can be stored in an index position (within the arrays index) that is 1 higher
+            }
+        }
+        return answer;
     }
 }
-
-/*
-Steps:
-1. user inputs words into the terminal
-2. these words are then passed as arguments through a method
-4. loop through all elements of input array and count size of all strings
-4. longest elements populate another empty array
-5. this array is converted to a string using Arrays.toString()
-6. this string is then returned by this method (therefore the end return value is a String
- */

@@ -1,8 +1,7 @@
-package com.bnta.Exercises.week2_wed;
+package com.bnta.Exercises.week2_wed_EnumsDatesExceptions;
 
 import java.time.LocalDateTime;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Exercise4 {
     public static void main(String[] args) {
