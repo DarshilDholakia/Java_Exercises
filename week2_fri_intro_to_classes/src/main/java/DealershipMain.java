@@ -1,3 +1,5 @@
+package com.bnta.Exercises.week2_fri_intro_to_classes.src.main.java;
+
 public class DealershipMain {
     public static void main(String[] args) {
         DealershipClass dealership1 = new DealershipClass("Dealership 1", 20); //creating a new

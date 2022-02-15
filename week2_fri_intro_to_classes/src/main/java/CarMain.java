@@ -1,3 +1,5 @@
+package com.bnta.Exercises.week2_fri_intro_to_classes.src.main.java;
+
 public class CarMain {
     public static void main(String[] args) {
         CarClass bmw = new CarClass(CarManufacturer.BMW, 50_000, CarEngine.PETROL);
